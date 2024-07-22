@@ -1,0 +1,60 @@
+1 >>
+create table student_details (
+    s_id varchar(15) PRIMARY KEY,
+    hall_ticket_number bigint(12),
+    admission_number VARCHAR(10),
+    student_name VARCHAR(20),
+    janmbhumi_number BIGINT(10),
+    aadhar_number BIGINT(12),
+    mobile_number BIGINT(10),
+    ssc INT(5),
+    second_language VARCHAR(20),
+    gender enum('male', 'female', 'other'),
+    date_of_birth DATE,
+    caste VARCHAR(20),
+    current_timestamp()
+);
+
+2 >>
+CREATE TABLE set_fee (
+    id int(10) auto_increment PRIMARY KEY,
+    year curdate().year (),
+    program_name varchar(20),
+    term_fee int(10),
+    stat_fee int(10),
+    current_timestamp()
+);
+
+3 >>
+CREATE TABLE add_dues (
+    s_no int(10) auto_increment,
+    student_id varchar(20) PRIMARY KEY,
+    student_name varchar(20),
+    due_amount bigint(10),
+    current_timestamp()
+);
+
+4>>
+CREATE TABLE transactions (
+    s_no int(10) auto_increment,
+    transaction_id bigint(15) PRIMARY KEY,
+    fee_type varchar(20), 
+    amount bigint(15), 
+    payment-method varchar(10),
+    current_timestamp()
+
+    );
+
+
+5>>
+create table create_role (
+    s_no int(10) auto_increment,
+    role_name varchar(20),
+    menu set('master','bills','expenses','reports','settings','backup database'),
+    sub_menu set('register student','add/modify fee types',
+    'set fee','download excels','relieve students', 'un-relieve students','dues excel upload', 'add old dues'
+    'pay fee', 'edit bills', 'generate manual bills' ,'final settlement', 'expenses/collection' )
+
+);
+
+6>>
